@@ -1,0 +1,13 @@
+{
+  "schema": "zhizi-capture-blackboard-item/v1",
+  "receipt_id": "ezm_20260524T201856Z_c5dfdc3e",
+  "created_at": "2026-05-24T20:18:56.749Z",
+  "direction": "inbox",
+  "status": "received",
+  "source": "zhizi-capture",
+  "channel": "eazo-submit-intent-compat",
+  "title": "End-to-end GitHub blackboard smoke after deploy key setup",
+  "body": "intent: End-to-end GitHub blackboard smoke after deploy key setup\ncontext: Verify relay to GitHub blackboard mirror.\nmodality: text\ndeclared_name: Macheng\neazo_session_id: github-blackboard-smoke\nclient_receipt_id: ghbb-1779653935\nclient_metadata: {\"source_view\":\"capture\",\"blackboard\":true}",
+  "question": "End-to-end GitHub blackboard smoke after deploy key setup",
+  "public_boundary": "Public-safe relay projection only. No secrets, credentials, private transcripts, identity/payment data, or owner-private context."
+}
