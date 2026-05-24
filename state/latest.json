@@ -1,0 +1,9 @@
+{
+  "schema": "zhizi-capture-blackboard-state/v1",
+  "updated_at": "2026-05-25T04:18:00+08:00",
+  "status": "initialized",
+  "latest_inbox_receipt": null,
+  "latest_outbox_receipt": null,
+  "poll_hint_seconds": 15,
+  "public_boundary": "Public-safe state only. No secrets, credentials, private transcripts, identity/payment data, or owner-private context."
+}

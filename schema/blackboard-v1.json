@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/MachengShen/zhizi-capture-blackboard/schema/blackboard-v1.json",
+  "title": "Zhizi Capture Blackboard Item",
+  "type": "object",
+  "required": ["schema", "receipt_id", "created_at", "direction", "status"],
+  "properties": {
+    "schema": {
+      "const": "zhizi-capture-blackboard-item/v1"
+    },
+    "receipt_id": {
+      "type": "string"
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "direction": {
+      "enum": ["inbox", "outbox"]
+    },
+    "status": {
+      "type": "string"
+    },
+    "source": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "body": {
+      "type": "string"
+    },
+    "public_boundary": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": true
+}
