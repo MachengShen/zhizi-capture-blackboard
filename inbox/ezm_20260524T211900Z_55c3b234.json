@@ -1,0 +1,20 @@
+{
+  "schema": "zhizi-capture-blackboard-item/v1",
+  "receipt_id": "ezm_20260524T211900Z_55c3b234",
+  "created_at": "2026-05-24T21:19:00.597Z",
+  "direction": "inbox",
+  "status": "received",
+  "source": "zhizi-capture",
+  "channel": "eazo-submit-intent-compat",
+  "title": "Live thread field smoke",
+  "body": "intent: Live thread field smoke\nmessage: Check conversation and trace projection.\nconversation_id: conv-thread-field-1\ntrace_id: trace-thread-field-1\nartifact_url: https://example.com/thread.png\nclient_metadata: {\"thread_projection\":true}",
+  "question": "Live thread field smoke",
+  "artifact_url": "https://example.com/thread.png",
+  "artifact_urls": [
+    "https://example.com/thread.png"
+  ],
+  "context_url": null,
+  "conversation_id": "conv-thread-field-1",
+  "trace_id": "trace-thread-field-1",
+  "public_boundary": "Public-safe relay projection only. No secrets, credentials, private transcripts, identity/payment data, or owner-private context."
+}
