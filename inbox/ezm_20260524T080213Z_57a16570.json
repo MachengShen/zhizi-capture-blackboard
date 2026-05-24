@@ -9,5 +9,10 @@
   "title": "relay.zhizi.live domain smoke",
   "body": "public-safe smoke through stable domain after Route53 INSYNC",
   "question": "",
+  "artifact_url": null,
+  "artifact_urls": [],
+  "context_url": null,
+  "conversation_id": "",
+  "trace_id": "",
   "public_boundary": "Public-safe relay projection only. No secrets, credentials, private transcripts, identity/payment data, or owner-private context."
 }
