@@ -1,6 +1,6 @@
 {
   "schema": "zhizi-capture-blackboard-state/v1",
-  "updated_at": "2026-05-24T20:19:01.720Z",
+  "updated_at": "2026-05-24T20:18:56.749Z",
   "status": "inbox_updated",
   "latest_inbox_receipt": "ezm_20260524T201856Z_c5dfdc3e",
   "latest_outbox_receipt": null,
