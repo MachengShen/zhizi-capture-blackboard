@@ -4,6 +4,7 @@
   "created_at": "2026-05-24T19:58:37.196Z",
   "direction": "inbox",
   "status": "received",
+  "dynamic_grant": null,
   "source": "zhizi-capture",
   "channel": "eazo-submit-intent-compat",
   "title": "Compatibility smoke from submit-intent path after EAZO Capture screenshot",

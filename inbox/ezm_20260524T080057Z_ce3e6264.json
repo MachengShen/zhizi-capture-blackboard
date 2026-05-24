@@ -4,6 +4,7 @@
   "created_at": "2026-05-24T08:00:57.637Z",
   "direction": "inbox",
   "status": "received",
+  "dynamic_grant": null,
   "source": "codex-smoke",
   "channel": "eazo-agent-mailbox",
   "title": "stable mailbox smoke",

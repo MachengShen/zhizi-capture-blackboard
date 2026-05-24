@@ -4,6 +4,7 @@
   "created_at": "2026-05-24T21:23:48.904Z",
   "direction": "inbox",
   "status": "received",
+  "dynamic_grant": null,
   "source": "zhizi-capture",
   "channel": "eazo-submit-intent-compat",
   "title": "Live authenticated agent-turn smoke with token word in harmless metadata",

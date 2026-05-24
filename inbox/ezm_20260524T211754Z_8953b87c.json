@@ -4,6 +4,7 @@
   "created_at": "2026-05-24T21:17:54.641Z",
   "direction": "inbox",
   "status": "received",
+  "dynamic_grant": null,
   "source": "zhizi-capture",
   "channel": "eazo-submit-intent-compat",
   "title": "Live robust agent-turn smoke after manifest deploy",

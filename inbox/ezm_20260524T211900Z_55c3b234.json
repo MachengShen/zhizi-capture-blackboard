@@ -4,6 +4,7 @@
   "created_at": "2026-05-24T21:19:00.597Z",
   "direction": "inbox",
   "status": "received",
+  "dynamic_grant": null,
   "source": "zhizi-capture",
   "channel": "eazo-submit-intent-compat",
   "title": "Live thread field smoke",

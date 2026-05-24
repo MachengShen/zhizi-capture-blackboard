@@ -1,9 +1,29 @@
 {
   "schema": "zhizi-capture-blackboard-state/v1",
-  "updated_at": "2026-05-24T21:23:48.904Z",
+  "updated_at": "2026-05-24T21:35:55.639Z",
   "status": "inbox_updated",
-  "latest_inbox_receipt": "ezm_20260524T212348Z_5c1ec215",
+  "latest_inbox_receipt": "ezm_20260524T213555Z_014a9c18",
   "latest_outbox_receipt": null,
   "poll_hint_seconds": 15,
+  "dynamic_grant": {
+    "model": "tokenless_interaction_dynamic_grant_v0",
+    "state": "ambient_intake",
+    "reasons": [],
+    "allowed_actions": [
+      "record_public_safe_turn",
+      "mirror_public_projection",
+      "poll_public_status"
+    ],
+    "denied_actions": [
+      "owner_plane_access",
+      "tool_execution",
+      "external_send",
+      "spending_or_payment",
+      "account_or_security_change",
+      "private_memory_access"
+    ],
+    "trust_basis": "observed_interaction_and_payload_risk_only_no_static_shared_secret",
+    "receipt_is_not_authorization_secret": true
+  },
   "public_boundary": "Public-safe state only. No secrets, credentials, private transcripts, identity/payment data, or owner-private context."
 }

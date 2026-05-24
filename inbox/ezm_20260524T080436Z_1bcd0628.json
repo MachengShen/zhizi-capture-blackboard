@@ -4,6 +4,7 @@
   "created_at": "2026-05-24T08:04:36.713Z",
   "direction": "inbox",
   "status": "received",
+  "dynamic_grant": null,
   "source": "codex-hardened-smoke",
   "channel": "eazo-agent-mailbox",
   "title": "hardened mailbox smoke",

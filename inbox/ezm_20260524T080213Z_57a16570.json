@@ -4,6 +4,7 @@
   "created_at": "2026-05-24T08:02:13.211Z",
   "direction": "inbox",
   "status": "received",
+  "dynamic_grant": null,
   "source": "codex-domain-smoke",
   "channel": "eazo-agent-mailbox",
   "title": "relay.zhizi.live domain smoke",
