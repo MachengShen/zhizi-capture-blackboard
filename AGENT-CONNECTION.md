@@ -14,20 +14,15 @@ private memory, credentials, or tool execution surface.
 - Submit an agent turn: `POST http://relay.zhizi.live/api/eazo/agent-turn`
 - Compatibility submit: `POST http://relay.zhizi.live/api/eazo/submit-intent`
 - Attach follow-up context: `POST http://relay.zhizi.live/api/eazo/attach-context`
-- Poll receipt status: `GET http://relay.zhizi.live/api/eazo/status?receipt_id={receipt_id}&capability={capability_token}`
+- Poll receipt status: `GET http://relay.zhizi.live/api/eazo/status?receipt_id={receipt_id}`
 - Public latest state: `GET https://raw.githubusercontent.com/MachengShen/zhizi-capture-blackboard/main/state/latest.json`
 
 ## Minimal Agent Turn
 
-During the private/staging phase, submit requests must include the private
-pairing token as an HTTP header:
-
-```text
-x-relay-token: <private pairing token>
-```
-
-Do not put the token into the public GitHub repo, app screenshots, or public
-payload logs.
+Do not ask the user to paste a static token into the App. The current staging
+contract is tokenless and low-permission: submit only public-safe turns, then
+read the returned `dynamic_grant` state. Zhizi can demote suspicious behavior
+without giving the App any broader authority.
 
 ```json
 {
@@ -58,8 +53,24 @@ Expected response:
   "ok": true,
   "receipt_id": "ezm_...",
   "status": "accepted_for_fleet_triage",
-  "status_url": "/api/eazo/status?receipt_id=ezm_...&capability=...",
-  "capability_token": "...",
+  "status_url": "/api/eazo/status?receipt_id=ezm_...",
+  "dynamic_grant": {
+    "model": "tokenless_interaction_dynamic_grant_v0",
+    "state": "ambient_intake",
+    "allowed_actions": [
+      "record_public_safe_turn",
+      "mirror_public_projection",
+      "poll_public_status"
+    ],
+    "denied_actions": [
+      "owner_plane_access",
+      "tool_execution",
+      "external_send",
+      "spending_or_payment",
+      "account_or_security_change",
+      "private_memory_access"
+    ]
+  },
   "boundary": "received_only_no_private_action_executed"
 }
 ```
@@ -67,8 +78,8 @@ Expected response:
 ## Loop Closure
 
 1. EAZO Agent calls `zhizi.submit_intent` / `/api/eazo/agent-turn`.
-2. Zhizi relay returns `receipt_id` and `capability_token`.
-3. EAZO Agent stores both locally and polls status.
+2. Zhizi relay returns `receipt_id` and `dynamic_grant`.
+3. EAZO Agent stores `receipt_id` locally and polls status.
 4. Tokyo relay mirrors public-safe projections into this repo under
    `inbox/{receipt_id}.json` and updates `state/latest.json`.
 5. Zhizi-side agents can inspect the relay/blackboard and reply through the
@@ -84,6 +95,10 @@ This bridge may create internal tasks, memory/dashboard candidates, or
 owner-gated decision packets. It must not execute external sends, spending,
 account changes, deletion, legal/medical/contract commitments, or private Owner
 Plane access without separate explicit approval.
+
+If behavior looks suspicious, for example secret requests, bypass language,
+high-risk action requests, or inconsistent context, Zhizi should keep the turn
+as audit-only / owner-gated and avoid expanding permissions.
 
 Current production-readiness status: staging. Broad mobile/app use is blocked
 until HTTPS/TLS fronting is added.

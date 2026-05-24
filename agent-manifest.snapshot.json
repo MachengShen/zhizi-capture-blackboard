@@ -8,10 +8,10 @@
     "note": "This is intentionally not private Owner Plane MCP and not formal MCP/SSE yet. Treat these endpoints as low-permission tools callable by the EAZO/Zhizi Capture Agent. A later MCP/SSE wrapper can map these tools 1:1 after TLS/auth hardening."
   },
   "auth": {
-    "submit_requires_write_token": true,
-    "header": "x-relay-token",
-    "bearer": "Authorization: Bearer <token>",
-    "note": "The token value is not published in this manifest. Use the private pairing token provided out-of-band."
+    "submit_requires_write_token": false,
+    "static_shared_token": "deprecated",
+    "model": "tokenless_interaction_dynamic_grant_v0",
+    "note": "Do not ask the user to paste a static token into the App. Submit public-safe turns without a shared secret; Zhizi computes a dynamic grant/demotion state from the interaction and payload risk."
   },
   "reply_mode": "async_receipt_polling_private_admin_reply_only_v0",
   "production_readiness": {
@@ -53,7 +53,7 @@
       ],
       "returns": [
         "receipt_id",
-        "capability_token",
+        "dynamic_grant",
         "status_url",
         "boundary"
       ]
@@ -66,7 +66,6 @@
       "purpose": "Attach follow-up public-safe context to a prior receipt.",
       "required_fields": [
         "receipt_id",
-        "capability_token",
         "content"
       ],
       "returns": [
@@ -77,12 +76,13 @@
     {
       "name": "zhizi.poll_status",
       "method": "GET",
-      "path": "/api/eazo/status?receipt_id={receipt_id}&capability={capability_token}",
-      "url_template": "http://relay.zhizi.live/api/eazo/status?receipt_id={receipt_id}&capability={capability_token}",
+      "path": "/api/eazo/status?receipt_id={receipt_id}",
+      "url_template": "http://relay.zhizi.live/api/eazo/status?receipt_id={receipt_id}",
       "purpose": "Poll a receipt for status, history, and eventual Zhizi reply.",
       "returns": [
         "receipt_id",
         "status",
+        "dynamic_grant",
         "reply",
         "history"
       ]
@@ -96,12 +96,13 @@
   ],
   "safety_boundary": [
     "Use this as an agent-readable mailbox and receipt loop, not as a raw tool-execution endpoint.",
+    "Do not use or request a static pairing token. Low-permission intake is tokenless; higher authority requires interaction-based grants and remains owner/frontstage gated.",
     "Do not send passwords, API keys, cookies, verification codes, payment data, identity documents, private source code, or owner-private transcripts.",
     "Zhizi may create internal tasks, memory/dashboard candidates, or owner-gated decision packets. External sends, spending, account changes, deletion, legal/medical/contract commitments, and private Owner Plane access require separate approval.",
     "HTTP transport is staging-only; broad app use is blocked until HTTPS/TLS is added."
   ],
   "loop_closure": {
-    "receipt": "submit_intent returns receipt_id and capability_token immediately.",
+    "receipt": "submit_intent returns receipt_id and dynamic_grant immediately.",
     "durable_state": "Tokyo relay stores append-only receipt records and mirrors public-safe projections to GitHub.",
     "feedback": "EAZO Agent polls status_url or GitHub blackboard; Zhizi replies appear in receipt.reply when available.",
     "timeout": "If no reply appears, the status remains received/triage state instead of silently failing.",
