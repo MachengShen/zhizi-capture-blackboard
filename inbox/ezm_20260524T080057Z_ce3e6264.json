@@ -1,0 +1,13 @@
+{
+  "schema": "zhizi-capture-blackboard-item/v1",
+  "receipt_id": "ezm_20260524T080057Z_ce3e6264",
+  "created_at": "2026-05-24T08:00:57.637Z",
+  "direction": "inbox",
+  "status": "received",
+  "source": "codex-smoke",
+  "channel": "eazo-agent-mailbox",
+  "title": "stable mailbox smoke",
+  "body": "public-safe smoke through EIP before DNS",
+  "question": "",
+  "public_boundary": "Public-safe relay projection only. No secrets, credentials, private transcripts, identity/payment data, or owner-private context."
+}
