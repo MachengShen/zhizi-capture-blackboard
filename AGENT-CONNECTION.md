@@ -10,6 +10,7 @@ private memory, credentials, or tool execution surface.
 - Base URL: `http://relay.zhizi.live`
 - Agent manifest: `GET http://relay.zhizi.live/api/eazo/agent-manifest`
 - MCP-style manifest: `GET http://relay.zhizi.live/api/eazo/mcp/manifest`
+  (tool-contract compatibility only; this is not formal MCP/SSE yet)
 - Submit an agent turn: `POST http://relay.zhizi.live/api/eazo/agent-turn`
 - Compatibility submit: `POST http://relay.zhizi.live/api/eazo/submit-intent`
 - Attach follow-up context: `POST http://relay.zhizi.live/api/eazo/attach-context`
@@ -17,6 +18,16 @@ private memory, credentials, or tool execution surface.
 - Public latest state: `GET https://raw.githubusercontent.com/MachengShen/zhizi-capture-blackboard/main/state/latest.json`
 
 ## Minimal Agent Turn
+
+During the private/staging phase, submit requests must include the private
+pairing token as an HTTP header:
+
+```text
+x-relay-token: <private pairing token>
+```
+
+Do not put the token into the public GitHub repo, app screenshots, or public
+payload logs.
 
 ```json
 {
@@ -73,3 +84,6 @@ This bridge may create internal tasks, memory/dashboard candidates, or
 owner-gated decision packets. It must not execute external sends, spending,
 account changes, deletion, legal/medical/contract commitments, or private Owner
 Plane access without separate explicit approval.
+
+Current production-readiness status: staging. Broad mobile/app use is blocked
+until HTTPS/TLS fronting is added.

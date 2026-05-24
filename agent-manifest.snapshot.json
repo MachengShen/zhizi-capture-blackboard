@@ -1,17 +1,30 @@
 {
   "schema": "zhizi-eazo-agent-tools/v1",
   "name": "Zhizi Capture Bridge",
-  "status": "live_http_low_permission",
+  "status": "staging_http_low_permission",
   "base_url": "http://relay.zhizi.live",
   "transport": {
-    "current": "https-compatible-http-json-contract-over-public-relay",
-    "note": "This is intentionally not private Owner Plane MCP. Treat these endpoints as low-permission tools callable by the EAZO/Zhizi Capture Agent. A later MCP/SSE wrapper can map these tools 1:1."
+    "current": "http-json-tool-contract-staging",
+    "note": "This is intentionally not private Owner Plane MCP and not formal MCP/SSE yet. Treat these endpoints as low-permission tools callable by the EAZO/Zhizi Capture Agent. A later MCP/SSE wrapper can map these tools 1:1 after TLS/auth hardening."
+  },
+  "auth": {
+    "submit_requires_write_token": true,
+    "header": "x-relay-token",
+    "bearer": "Authorization: Bearer <token>",
+    "note": "The token value is not published in this manifest. Use the private pairing token provided out-of-band."
+  },
+  "reply_mode": "async_receipt_polling_private_admin_reply_only_v0",
+  "production_readiness": {
+    "broad_app_use": "blocked_until_https_tls",
+    "formal_mcp": "not_yet",
+    "current_scope": "private/staging EAZO-Zhizi iteration with low-permission payloads"
   },
   "tools": [
     {
       "name": "zhizi.submit_intent",
       "method": "POST",
       "path": "/api/eazo/submit-intent",
+      "url": "http://relay.zhizi.live/api/eazo/submit-intent",
       "purpose": "Send a user intent or agent turn to Zhizi for durable receipt and fleet/frontstage triage.",
       "required_fields": [
         "intent"
@@ -49,6 +62,7 @@
       "name": "zhizi.attach_context",
       "method": "POST",
       "path": "/api/eazo/attach-context",
+      "url": "http://relay.zhizi.live/api/eazo/attach-context",
       "purpose": "Attach follow-up public-safe context to a prior receipt.",
       "required_fields": [
         "receipt_id",
@@ -64,6 +78,7 @@
       "name": "zhizi.poll_status",
       "method": "GET",
       "path": "/api/eazo/status?receipt_id={receipt_id}&capability={capability_token}",
+      "url_template": "http://relay.zhizi.live/api/eazo/status?receipt_id={receipt_id}&capability={capability_token}",
       "purpose": "Poll a receipt for status, history, and eventual Zhizi reply.",
       "returns": [
         "receipt_id",
@@ -82,7 +97,8 @@
   "safety_boundary": [
     "Use this as an agent-readable mailbox and receipt loop, not as a raw tool-execution endpoint.",
     "Do not send passwords, API keys, cookies, verification codes, payment data, identity documents, private source code, or owner-private transcripts.",
-    "Zhizi may create internal tasks, memory/dashboard candidates, or owner-gated decision packets. External sends, spending, account changes, deletion, legal/medical/contract commitments, and private Owner Plane access require separate approval."
+    "Zhizi may create internal tasks, memory/dashboard candidates, or owner-gated decision packets. External sends, spending, account changes, deletion, legal/medical/contract commitments, and private Owner Plane access require separate approval.",
+    "HTTP transport is staging-only; broad app use is blocked until HTTPS/TLS is added."
   ],
   "loop_closure": {
     "receipt": "submit_intent returns receipt_id and capability_token immediately.",
