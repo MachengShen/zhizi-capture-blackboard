@@ -19,5 +19,6 @@
   "context_url": null,
   "conversation_id": "",
   "trace_id": "",
+  "redacted_for_dynamic_grant": false,
   "public_boundary": "Public-safe relay projection only. No secrets, credentials, private transcripts, identity/payment data, or owner-private context."
 }
