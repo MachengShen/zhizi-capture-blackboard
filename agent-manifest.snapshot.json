@@ -1,0 +1,94 @@
+{
+  "schema": "zhizi-eazo-agent-tools/v1",
+  "name": "Zhizi Capture Bridge",
+  "status": "live_http_low_permission",
+  "base_url": "http://relay.zhizi.live",
+  "transport": {
+    "current": "https-compatible-http-json-contract-over-public-relay",
+    "note": "This is intentionally not private Owner Plane MCP. Treat these endpoints as low-permission tools callable by the EAZO/Zhizi Capture Agent. A later MCP/SSE wrapper can map these tools 1:1."
+  },
+  "tools": [
+    {
+      "name": "zhizi.submit_intent",
+      "method": "POST",
+      "path": "/api/eazo/submit-intent",
+      "purpose": "Send a user intent or agent turn to Zhizi for durable receipt and fleet/frontstage triage.",
+      "required_fields": [
+        "intent"
+      ],
+      "optional_fields": [
+        "need",
+        "modality",
+        "priority",
+        "declared_name",
+        "eazo_user_id",
+        "eazo_device_id",
+        "eazo_session_id",
+        "conversation_id",
+        "trace_id",
+        "client_receipt_id",
+        "context",
+        "client_context",
+        "message",
+        "imageUrl",
+        "artifact_url",
+        "artifact_urls",
+        "attachments",
+        "context_url",
+        "agent_state",
+        "client_metadata"
+      ],
+      "returns": [
+        "receipt_id",
+        "capability_token",
+        "status_url",
+        "boundary"
+      ]
+    },
+    {
+      "name": "zhizi.attach_context",
+      "method": "POST",
+      "path": "/api/eazo/attach-context",
+      "purpose": "Attach follow-up public-safe context to a prior receipt.",
+      "required_fields": [
+        "receipt_id",
+        "capability_token",
+        "content"
+      ],
+      "returns": [
+        "receipt_id",
+        "status"
+      ]
+    },
+    {
+      "name": "zhizi.poll_status",
+      "method": "GET",
+      "path": "/api/eazo/status?receipt_id={receipt_id}&capability={capability_token}",
+      "purpose": "Poll a receipt for status, history, and eventual Zhizi reply.",
+      "returns": [
+        "receipt_id",
+        "status",
+        "reply",
+        "history"
+      ]
+    },
+    {
+      "name": "zhizi.read_blackboard",
+      "method": "GET",
+      "path": "https://raw.githubusercontent.com/MachengShen/zhizi-capture-blackboard/main/state/latest.json",
+      "purpose": "Read the public-safe blackboard state mirrored from the relay."
+    }
+  ],
+  "safety_boundary": [
+    "Use this as an agent-readable mailbox and receipt loop, not as a raw tool-execution endpoint.",
+    "Do not send passwords, API keys, cookies, verification codes, payment data, identity documents, private source code, or owner-private transcripts.",
+    "Zhizi may create internal tasks, memory/dashboard candidates, or owner-gated decision packets. External sends, spending, account changes, deletion, legal/medical/contract commitments, and private Owner Plane access require separate approval."
+  ],
+  "loop_closure": {
+    "receipt": "submit_intent returns receipt_id and capability_token immediately.",
+    "durable_state": "Tokyo relay stores append-only receipt records and mirrors public-safe projections to GitHub.",
+    "feedback": "EAZO Agent polls status_url or GitHub blackboard; Zhizi replies appear in receipt.reply when available.",
+    "timeout": "If no reply appears, the status remains received/triage state instead of silently failing.",
+    "repair": "Client should surface non-2xx JSON errors and retry only after changing the offending payload."
+  }
+}
