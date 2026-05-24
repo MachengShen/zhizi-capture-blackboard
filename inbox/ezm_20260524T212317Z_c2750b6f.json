@@ -1,0 +1,20 @@
+{
+  "schema": "zhizi-capture-blackboard-item/v1",
+  "receipt_id": "ezm_20260524T212317Z_c2750b6f",
+  "created_at": "2026-05-24T21:23:17.439Z",
+  "direction": "inbox",
+  "status": "received",
+  "source": "zhizi-capture",
+  "channel": "eazo-submit-intent-compat",
+  "title": "Live authenticated agent-turn smoke",
+  "body": "intent: Live authenticated agent-turn smoke\nmessage: Auth gate is enabled.\nconversation_id: conv-auth-live-2\ntrace_id: trace-auth-live-2\nartifact_url: https://example.com/auth-live.png\nclient_metadata: {\"auth_gate\":true}",
+  "question": "Live authenticated agent-turn smoke",
+  "artifact_url": "https://example.com/auth-live.png",
+  "artifact_urls": [
+    "https://example.com/auth-live.png"
+  ],
+  "context_url": null,
+  "conversation_id": "conv-auth-live-2",
+  "trace_id": "trace-auth-live-2",
+  "public_boundary": "Public-safe relay projection only. No secrets, credentials, private transcripts, identity/payment data, or owner-private context."
+}
