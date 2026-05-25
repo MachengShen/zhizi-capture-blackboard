@@ -28,5 +28,9 @@ This repository is a blackboard, not an authority surface:
 3. Agents read the repo, process safe items, then write an `outbox/` response.
 4. The App polls repo commits or `state/latest.json` for result pointers.
 
+When `state/latest.json` has a non-null `latest_outbox_receipt`, clients should
+read `outbox/{latest_outbox_receipt}.json`. Relay-side inbox mirrors must
+preserve this pointer when they refresh the latest inbox receipt.
+
 This keeps GitHub as durable, auditable shared storage without exposing a broad
 GitHub token or copied static relay secret to the mobile app.

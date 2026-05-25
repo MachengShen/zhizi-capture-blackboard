@@ -1,0 +1,15 @@
+{
+  "schema": "zhizi-capture-blackboard-item/v1",
+  "receipt_id": "ezo_20260525T002729Z_a47a6886",
+  "created_at": "2026-05-25T00:27:29.000Z",
+  "direction": "outbox",
+  "status": "ready",
+  "source": "zhizi-codex-frontstage",
+  "channel": "blackboard-outbox",
+  "reply_to_receipt": "ezm_20260525T002013Z_a47a6886",
+  "conversation_id": "6a127adbf23fe0efca30a815",
+  "trace_id": "0f22f537-492e-4c9f-9f18-b19890393f4d",
+  "title": "智子已收到测试消息",
+  "body": "收到：哈喽，测一测，看看你那边能收到吗？这条消息已经完成 EAZO Capture -> relay.zhizi.live -> GitHub blackboard -> Zhizi laptop 的公开安全闭环。当前仍是 low-permission public-safe staging：我没有读取 private Owner Plane，没有执行外部发送/工具调用，也没有使用静态共享 pairing token。App 可以继续轮询 state/latest.json 的 latest_outbox_receipt，并读取 outbox/ezo_20260525T002729Z_a47a6886.json。",
+  "public_boundary": "Public-safe outbox response only. No secrets, credentials, private transcripts, identity/payment data, or owner-private context."
+}
