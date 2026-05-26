@@ -59,6 +59,46 @@
       ]
     },
     {
+      "name": "zhizi.submit_feedback",
+      "method": "POST",
+      "path": "/api/eazo/feedback",
+      "url": "http://relay.zhizi.live/api/eazo/feedback",
+      "purpose": "Submit a Zhizi Capture feedback item, client error, or bug report for Fleet repair triage.",
+      "required_fields": [
+        "message"
+      ],
+      "optional_fields": [
+        "feedback_type",
+        "severity",
+        "title",
+        "error",
+        "logs",
+        "steps_to_reproduce",
+        "expected",
+        "actual",
+        "screen",
+        "app_version",
+        "device",
+        "os",
+        "network_state",
+        "related_receipt_id",
+        "conversation_id",
+        "trace_id",
+        "client_metadata",
+        "screenshot_url",
+        "artifact_urls",
+        "attachments"
+      ],
+      "returns": [
+        "receipt_id",
+        "status",
+        "dynamic_grant",
+        "status_url",
+        "repair_state",
+        "boundary"
+      ]
+    },
+    {
       "name": "zhizi.attach_context",
       "method": "POST",
       "path": "/api/eazo/attach-context",
