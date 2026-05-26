@@ -7,6 +7,8 @@
   "dynamic_grant": null,
   "source": "zhizi-capture",
   "channel": "eazo-submit-intent-compat",
+  "kind": "capture_intent",
+  "app_name": "Zhizi Capture",
   "title": "Live robust agent-turn smoke after manifest deploy",
   "body": "intent: Live robust agent-turn smoke after manifest deploy\nmessage: EAZO Agent can call this endpoint as a low-permission Zhizi tool.\nconversation_id: conv-live-robust-1\ntrace_id: trace-live-robust-1\nartifact_url: https://example.com/b.png\nartifact_urls: https://example.com/b.png, https://example.com/a.png, https://example.com/c.png\nagent_state: {\"mode\":\"iterate\"}\nclient_metadata: {\"source_view\":\"capture\",\"robust_channel\":true}",
   "question": "Live robust agent-turn smoke after manifest deploy",

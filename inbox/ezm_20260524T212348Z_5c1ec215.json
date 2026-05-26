@@ -7,6 +7,8 @@
   "dynamic_grant": null,
   "source": "zhizi-capture",
   "channel": "eazo-submit-intent-compat",
+  "kind": "capture_intent",
+  "app_name": "Zhizi Capture",
   "title": "Live authenticated agent-turn smoke with token word in harmless metadata",
   "body": "intent: Live authenticated agent-turn smoke with token word in harmless metadata\nmessage: Auth gate remains enabled.\nconversation_id: conv-auth-live-3\ntrace_id: trace-auth-live-3\nartifact_url: https://example.com/auth-live.png\nclient_metadata: {\"write_token_gate\":true}",
   "question": "Live authenticated agent-turn smoke with token word in harmless metadata",

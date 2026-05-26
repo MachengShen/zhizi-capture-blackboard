@@ -7,6 +7,8 @@
   "dynamic_grant": null,
   "source": "zhizi-capture",
   "channel": "eazo-submit-intent-compat",
+  "kind": "execute",
+  "app_name": "Zhizi Capture",
   "title": "Compatibility smoke after imageUrl fix",
   "body": "intent: Compatibility smoke after imageUrl fix\nmodality: text\ndeclared_name: Macheng\neazo_session_id: imageurl-fix-smoke\nclient_receipt_id: imageurl-fix-1779657330\nartifact_url: https://example.com/capture.png\nclient_metadata: {\"source_view\":\"capture\",\"imageUrl_fix\":true}",
   "question": "Compatibility smoke after imageUrl fix",

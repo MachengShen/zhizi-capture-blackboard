@@ -7,6 +7,8 @@
   "dynamic_grant": null,
   "source": "codex-domain-smoke",
   "channel": "eazo-agent-mailbox",
+  "kind": "smoke",
+  "app_name": "",
   "title": "relay.zhizi.live domain smoke",
   "body": "public-safe smoke through stable domain after Route53 INSYNC",
   "question": "",

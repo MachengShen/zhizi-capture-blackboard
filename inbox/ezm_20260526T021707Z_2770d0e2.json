@@ -26,6 +26,8 @@
   },
   "source": "zhizi-capture",
   "channel": "eazo-submit-intent-compat",
+  "kind": "哈喽哈喽，智子，你能接收到我信息吗？",
+  "app_name": "Zhizi Capture",
   "title": "哈喽哈喽，智子，你能接收到我信息吗？",
   "body": "intent: 哈喽哈喽，智子，你能接收到我信息吗？\nmodality: text\ndeclared_name: Macheng\neazo_session_id: 6a127adbf23fe0efca30a815\nclient_receipt_id: aa1d4ead-3bfd-4952-b1ae-c167f35b4c4a\nclient_metadata: {\"app_build\":\"eazo-spike\",\"source_view\":\"capture\"}",
   "question": "哈喽哈喽，智子，你能接收到我信息吗？",

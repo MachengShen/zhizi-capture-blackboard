@@ -7,6 +7,8 @@
   "dynamic_grant": null,
   "source": "zhizi-capture",
   "channel": "eazo-submit-intent-compat",
+  "kind": "capture_intent",
+  "app_name": "Zhizi Capture",
   "title": "Live thread field smoke",
   "body": "intent: Live thread field smoke\nmessage: Check conversation and trace projection.\nconversation_id: conv-thread-field-1\ntrace_id: trace-thread-field-1\nartifact_url: https://example.com/thread.png\nclient_metadata: {\"thread_projection\":true}",
   "question": "Live thread field smoke",

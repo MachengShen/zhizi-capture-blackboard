@@ -26,6 +26,8 @@
   },
   "source": "zhizi-capture",
   "channel": "eazo-submit-intent-compat",
+  "kind": "capture_intent",
+  "app_name": "Zhizi Capture",
   "title": "Live tokenless EAZO Capture smoke",
   "body": "intent: Live tokenless EAZO Capture smoke\nmessage: No shared pairing secret is required for public-safe intake.\nconversation_id: conv-live-tokenless-1\ntrace_id: trace-live-tokenless-1",
   "question": "Live tokenless EAZO Capture smoke",

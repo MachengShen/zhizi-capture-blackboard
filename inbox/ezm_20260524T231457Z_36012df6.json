@@ -26,6 +26,8 @@
   },
   "source": "zhizi-capture",
   "channel": "eazo-submit-intent-compat",
+  "kind": "哈喽，能收到吗？",
+  "app_name": "Zhizi Capture",
   "title": "哈喽，能收到吗？",
   "body": "intent: 哈喽，能收到吗？\nmodality: text\ndeclared_name: Macheng\neazo_session_id: 6a127adbf23fe0efca30a815\nclient_receipt_id: d3d6f0a2-e7b9-4845-8a38-ec0daac347e5\nclient_metadata: {\"app_build\":\"eazo-spike\",\"source_view\":\"capture\"}",
   "question": "哈喽，能收到吗？",

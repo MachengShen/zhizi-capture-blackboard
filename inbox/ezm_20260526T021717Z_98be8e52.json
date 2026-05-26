@@ -26,6 +26,8 @@
   },
   "source": "zhizi-capture",
   "channel": "eazo-submit-intent-compat",
+  "kind": "hi",
+  "app_name": "Zhizi Capture",
   "title": "hi",
   "body": "intent: hi\nmodality: text\ndeclared_name: Macheng\neazo_session_id: 6a127adbf23fe0efca30a815\nclient_receipt_id: c7b07248-18c2-409e-9827-c46196291c07\nclient_metadata: {\"app_build\":\"eazo-spike\",\"source_view\":\"capture\"}",
   "question": "hi",

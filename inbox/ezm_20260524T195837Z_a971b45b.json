@@ -7,6 +7,8 @@
   "dynamic_grant": null,
   "source": "zhizi-capture",
   "channel": "eazo-submit-intent-compat",
+  "kind": "execute",
+  "app_name": "Zhizi Capture",
   "title": "Compatibility smoke from submit-intent path after EAZO Capture screenshot",
   "body": "intent: Compatibility smoke from submit-intent path after EAZO Capture screenshot\ncontext: Laptop sleep should not affect Tokyo relay.\nmodality: text\ndeclared_name: Macheng\neazo_session_id: compat-smoke\nclient_receipt_id: compat-1779652716\nclient_metadata: {\"app_build\":\"eazo-spike\",\"source_view\":\"capture\"}",
   "question": "Compatibility smoke from submit-intent path after EAZO Capture screenshot",

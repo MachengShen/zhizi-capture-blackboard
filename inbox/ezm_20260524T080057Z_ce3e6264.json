@@ -7,6 +7,8 @@
   "dynamic_grant": null,
   "source": "codex-smoke",
   "channel": "eazo-agent-mailbox",
+  "kind": "smoke",
+  "app_name": "",
   "title": "stable mailbox smoke",
   "body": "public-safe smoke through EIP before DNS",
   "question": "",

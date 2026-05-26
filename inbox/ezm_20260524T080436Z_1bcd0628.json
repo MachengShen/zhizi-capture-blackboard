@@ -7,6 +7,8 @@
   "dynamic_grant": null,
   "source": "codex-hardened-smoke",
   "channel": "eazo-agent-mailbox",
+  "kind": "smoke",
+  "app_name": "",
   "title": "hardened mailbox smoke",
   "body": "public-safe smoke after admin/rate/storage hardening",
   "question": "",

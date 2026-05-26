@@ -7,6 +7,8 @@
   "dynamic_grant": null,
   "source": "zhizi-capture",
   "channel": "eazo-submit-intent-compat",
+  "kind": "capture_intent",
+  "app_name": "Zhizi Capture",
   "title": "Live authenticated agent-turn smoke",
   "body": "intent: Live authenticated agent-turn smoke\nmessage: Auth gate is enabled.\nconversation_id: conv-auth-live-2\ntrace_id: trace-auth-live-2\nartifact_url: https://example.com/auth-live.png\nclient_metadata: {\"auth_gate\":true}",
   "question": "Live authenticated agent-turn smoke",
