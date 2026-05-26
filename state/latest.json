@@ -1,17 +1,19 @@
 {
   "schema": "zhizi-capture-blackboard-state/v1",
-  "updated_at": "2026-05-25T00:20:13.055Z",
+  "updated_at": "2026-05-26T02:15:31.865Z",
   "status": "inbox_updated",
-  "latest_inbox_receipt": "ezm_20260525T002013Z_a47a6886",
+  "latest_inbox_receipt": "ezm_20260526T021531Z_2d95f253",
   "latest_outbox_receipt": "ezo_20260525T002729Z_a47a6886",
   "poll_hint_seconds": 15,
   "dynamic_grant": {
     "model": "tokenless_interaction_dynamic_grant_v0",
-    "state": "ambient_intake",
-    "reasons": [],
+    "state": "interaction_required",
+    "reasons": [
+      "missing_conversation_id"
+    ],
     "allowed_actions": [
       "record_public_safe_turn",
-      "mirror_public_projection",
+      "ask_user_or_agent_for_more_context",
       "poll_public_status"
     ],
     "denied_actions": [
