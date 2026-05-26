@@ -138,6 +138,7 @@
     "Use this as an agent-readable mailbox and receipt loop, not as a raw tool-execution endpoint.",
     "Do not use or request a static pairing token. Low-permission intake is tokenless; higher authority requires interaction-based grants and remains owner/frontstage gated.",
     "Do not send passwords, API keys, cookies, verification codes, payment data, identity documents, private source code, or owner-private transcripts.",
+    "Requests are capped at 16384 bytes and rate-limited per source IP before storage.",
     "Zhizi may create internal tasks, memory/dashboard candidates, or owner-gated decision packets. External sends, spending, account changes, deletion, legal/medical/contract commitments, and private Owner Plane access require separate approval.",
     "HTTP transport is staging-only; broad app use is blocked until HTTPS/TLS is added."
   ],
