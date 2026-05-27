@@ -7,16 +7,16 @@ private memory, credentials, or tool execution surface.
 
 ## Live Endpoints
 
-- Base URL: `http://relay.zhizi.live`
-- Agent manifest: `GET http://relay.zhizi.live/api/eazo/agent-manifest`
-- MCP-style manifest: `GET http://relay.zhizi.live/api/eazo/mcp/manifest`
+- Base URL: `https://eazo.clawishmacheng.com`
+- Agent manifest: `GET https://eazo.clawishmacheng.com/api/eazo/agent-manifest`
+- MCP-style manifest: `GET https://eazo.clawishmacheng.com/api/eazo/mcp/manifest`
   (tool-contract compatibility only; this is not formal MCP/SSE yet)
-- Submit an agent turn: `POST http://relay.zhizi.live/api/eazo/agent-turn`
-- Compatibility submit: `POST http://relay.zhizi.live/api/eazo/submit-intent`
-- Submit feedback / bug report: `POST http://relay.zhizi.live/api/eazo/feedback`
+- Submit an agent turn: `POST https://eazo.clawishmacheng.com/api/eazo/agent-turn`
+- Compatibility submit: `POST https://eazo.clawishmacheng.com/api/eazo/submit-intent`
+- Submit feedback / bug report: `POST https://eazo.clawishmacheng.com/api/eazo/feedback`
   (aliases: `/api/eazo/submit-feedback`, `/api/eazo/bug-report`)
-- Attach follow-up context: `POST http://relay.zhizi.live/api/eazo/attach-context`
-- Poll receipt status: `GET http://relay.zhizi.live/api/eazo/status?receipt_id={receipt_id}`
+- Attach follow-up context: `POST https://eazo.clawishmacheng.com/api/eazo/attach-context`
+- Poll receipt status: `GET https://eazo.clawishmacheng.com/api/eazo/status?receipt_id={receipt_id}`
 - Public latest state: `GET https://raw.githubusercontent.com/MachengShen/zhizi-capture-blackboard/main/state/latest.json`
 
 ## Minimal Agent Turn
@@ -138,5 +138,6 @@ If behavior looks suspicious, for example secret requests, bypass language,
 high-risk action requests, or inconsistent context, Zhizi should keep the turn
 as audit-only / owner-gated and avoid expanding permissions.
 
-Current production-readiness status: staging. Broad mobile/app use is blocked
-until HTTPS/TLS fronting is added.
+Current production-readiness status: HTTPS staging. Use
+`https://eazo.clawishmacheng.com` for private EAZO/Zhizi iteration; this is
+still a low-permission receipt loop, not private Owner Plane access.
