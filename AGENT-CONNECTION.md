@@ -19,6 +19,11 @@ private memory, credentials, or tool execution surface.
 - Poll receipt status: `GET https://eazo.clawishmacheng.com/api/eazo/status?receipt_id={receipt_id}`
 - Public latest state: `GET https://raw.githubusercontent.com/MachengShen/zhizi-capture-blackboard/main/state/latest.json`
 
+Do not use `https://relay.zhizi.live` for the App. That hostname is still
+reserved for a later `zhizi.live` edge migration; today its port 443 does not
+serve this mailbox. The current HTTPS hostname is staging-only but stable
+enough for private EAZO/Zhizi iteration.
+
 ## Minimal Agent Turn
 
 Do not ask the user to paste a static token into the App. The current staging
