@@ -1,0 +1,41 @@
+{
+  "schema": "zhizi-capture-blackboard-item/v1",
+  "receipt_id": "ezm_20260527T215045Z_62898221",
+  "created_at": "2026-05-27T21:50:45.225Z",
+  "direction": "inbox",
+  "status": "received",
+  "dynamic_grant": {
+    "model": "tokenless_interaction_dynamic_grant_v0",
+    "state": "ambient_intake",
+    "reasons": [],
+    "allowed_actions": [
+      "record_public_safe_turn",
+      "mirror_public_projection",
+      "poll_public_status"
+    ],
+    "denied_actions": [
+      "owner_plane_access",
+      "tool_execution",
+      "external_send",
+      "spending_or_payment",
+      "account_or_security_change",
+      "private_memory_access"
+    ],
+    "trust_basis": "observed_interaction_and_payload_risk_only_no_static_shared_secret",
+    "receipt_is_not_authorization_secret": true
+  },
+  "source": "zhizi-capture",
+  "channel": "eazo-submit-intent-compat",
+  "kind": "capture_intent",
+  "app_name": "Zhizi Capture",
+  "title": "HTTPS eazo.clawishmacheng.com live smoke from Codex direct",
+  "body": "intent: HTTPS eazo.clawishmacheng.com live smoke from Codex direct\ndeclared_name: macheng-diagnostic\nconversation_id: codex-eazo-https-smoke\ntrace_id: trace-20260528-https-direct\nclient_metadata: {\"source\":\"codex-20260528\",\"surface\":\"cloudflare-named-tunnel\"}",
+  "question": "HTTPS eazo.clawishmacheng.com live smoke from Codex direct",
+  "artifact_url": null,
+  "artifact_urls": [],
+  "context_url": null,
+  "conversation_id": "codex-eazo-https-smoke",
+  "trace_id": "trace-20260528-https-direct",
+  "redacted_for_dynamic_grant": false,
+  "public_boundary": "Public-safe relay projection only. No secrets, credentials, private transcripts, identity/payment data, or owner-private context."
+}
