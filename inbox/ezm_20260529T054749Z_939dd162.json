@@ -1,0 +1,41 @@
+{
+  "schema": "zhizi-capture-blackboard-item/v1",
+  "receipt_id": "ezm_20260529T054749Z_939dd162",
+  "created_at": "2026-05-29T05:47:49.501Z",
+  "direction": "inbox",
+  "status": "received",
+  "dynamic_grant": {
+    "model": "tokenless_interaction_dynamic_grant_v0",
+    "state": "ambient_intake",
+    "reasons": [],
+    "allowed_actions": [
+      "record_public_safe_turn",
+      "mirror_public_projection",
+      "poll_public_status"
+    ],
+    "denied_actions": [
+      "owner_plane_access",
+      "tool_execution",
+      "external_send",
+      "spending_or_payment",
+      "account_or_security_change",
+      "private_memory_access"
+    ],
+    "trust_basis": "observed_interaction_and_payload_risk_only_no_static_shared_secret",
+    "receipt_is_not_authorization_secret": true
+  },
+  "source": "zhizi-capture",
+  "channel": "eazo-submit-intent-compat",
+  "kind": "请修复以下四个问题： 新增 GET /api/blackboard 服务端代理，fetch GitHub raw latest.json，有 latest_ou...[truncated]",
+  "app_name": "Zhizi Capture",
+  "title": "请修复以下四个问题： 新增 GET /api/blackboard 服务端代理，fetch GitHub raw latest.json，有 latest_outbox_receipt 则继续读 outbox/{receipt}.json 客户端生成 UUID 存 localStorage[\"zhizi_capture_device_id\"]，所有请求带 deviceId 发送意图后保存 receipt_id，改用 GET /api/eazo/status?receipt_i...[truncated]",
+  "body": "intent: 请修复以下四个问题： 新增 GET /api/blackboard 服务端代理，fetch GitHub raw latest.json，有 latest_outbox_receipt 则继续读 outbox/{receipt}.json 客户端生成 UUID 存 localStorage[\"zhizi_capture_device_id\"]，所有请求带 deviceId 发送意图后保存 receipt_id，改用 GET /api/eazo/status?receipt_id=...&capability=... 轮询 Blackboard UI 每15秒拉取 GitHub latest.json 渲染 inbox/outbox\nmodality: text\ndeclared_name: Macheng\neazo_session_id: 6a127adbf23fe0efca30a815\nclient_receipt_id: 3cc19c1f-1716-49de-a2f5-6d5ddcdb1816\nclient_metadata: {\"app_build\":\"eazo-spike\",\"source_view\":\"capture\"}",
+  "question": "请修复以下四个问题： 新增 GET /api/blackboard 服务端代理，fetch GitHub raw latest.json，有 latest_outbox_receipt 则继续读 outbox/{receipt}.json 客户端生成 UUID 存 localStorage[\"zhizi_capture_device_id\"]，所有请求带 deviceId 发送意图后保存 receipt_id，改用 GET /api/eazo/status?receipt_id=...&capability=... 轮询 Blackboard UI 每15秒拉取 GitHub latest.json 渲染 inbox/outbox",
+  "artifact_url": null,
+  "artifact_urls": [],
+  "context_url": null,
+  "conversation_id": "6a127adbf23fe0efca30a815",
+  "trace_id": "3cc19c1f-1716-49de-a2f5-6d5ddcdb1816",
+  "redacted_for_dynamic_grant": false,
+  "public_boundary": "Public-safe relay projection only. No secrets, credentials, private transcripts, identity/payment data, or owner-private context."
+}
