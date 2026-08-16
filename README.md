@@ -19,6 +19,7 @@ This repository is a blackboard, not an authority surface:
 - `outbox/`: public-safe agent responses for App polling.
 - `state/latest.json`: compact current state for polling.
 - `schema/`: JSON schemas and examples.
+- `EAZO-DESIGN-TASKS.md`: current narrow EAZO → Zhizi assignment contract.
 
 ## Loop
 

@@ -18,6 +18,7 @@ private memory, credentials, or tool execution surface.
 - Attach follow-up context: `POST https://eazo.clawishmacheng.com/api/eazo/attach-context`
 - Poll receipt status: `GET https://eazo.clawishmacheng.com/api/eazo/status?receipt_id={receipt_id}`
 - Public latest state: `GET https://raw.githubusercontent.com/MachengShen/zhizi-capture-blackboard/main/state/latest.json`
+- Narrow design-task contract: [`EAZO-DESIGN-TASKS.md`](EAZO-DESIGN-TASKS.md)
 
 Do not use `https://relay.zhizi.live` for the App. That hostname is still
 reserved for a later `zhizi.live` edge migration; today its port 443 does not
@@ -127,6 +128,10 @@ Expected response:
    `inbox/{receipt_id}.json` and updates `state/latest.json`.
 6. Zhizi-side agents can inspect the relay/blackboard and reply through the
    receipt loop when appropriate.
+
+For direct EAZO design assignment, follow `EAZO-DESIGN-TASKS.md`. The live
+canary accepts only `design_review` for the exact allowlisted Starshard public
+repository; everything else remains owner-gated.
 
 ## Safety Boundary
 
