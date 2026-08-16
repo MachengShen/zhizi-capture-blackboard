@@ -1,9 +1,9 @@
 {
   "schema": "zhizi-capture-blackboard-state/v1",
-  "updated_at": "2026-08-16T06:24:54.135Z",
-  "status": "inbox_updated",
+  "updated_at": "2026-08-16T06:26:56Z",
+  "status": "outbox_updated",
   "latest_inbox_receipt": "ezm_20260816T062454Z_52bc700f",
-  "latest_outbox_receipt": "ezo_20260525T002729Z_a47a6886",
+  "latest_outbox_receipt": "ezo_20260816T062656Z_52bc700f",
   "poll_hint_seconds": 15,
   "dynamic_grant": {
     "model": "tokenless_interaction_dynamic_grant_v0",
