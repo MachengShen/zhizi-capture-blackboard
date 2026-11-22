@@ -1,8 +1,8 @@
 {
   "schema": "zhizi-capture-blackboard-state/v1",
-  "updated_at": "2026-11-22T11:46:56.191Z",
+  "updated_at": "2026-11-22T11:48:15.846Z",
   "status": "inbox_updated",
-  "latest_inbox_receipt": "ezm_20261122T114656Z_a9f0b173",
+  "latest_inbox_receipt": "ezm_20261122T114815Z_ca99be12",
   "latest_outbox_receipt": "ezo_20260816T062656Z_52bc700f",
   "poll_hint_seconds": 15,
   "dynamic_grant": {
